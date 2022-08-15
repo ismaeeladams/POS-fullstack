@@ -29,7 +29,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
     <title>Point Of Sale</title>
-    <script src="./main.js"></script>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -90,10 +89,9 @@
       <div class="row justify-content-center">
         <div id="aboutcol1" class="col-6">
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum alias
-            delectus inventore placeat nemo atque sequi ex velit architecto, at
-            amet sunt commodi aliquam cumque unde voluptatem sint similique
-            nesciunt.
+            Electro is a eletronic based company that produce technology,
+            whether its for games or electronic devices for work purposes,
+            whatever you need you let us know and we got your back.
           </p>
           <div class="row">
             <div class="col-6">
@@ -160,7 +158,7 @@
         products.forEach((product) => {
           uContainer.innerHTML += `
       <div class="container">
-      <div id="card" class="card mb-3">
+      <div id="card" >
       <div class="row">
       <div class="product col-md-4 p-5">
      <div class="Item"  onclick='showItem(this.id)' id="${product.product_id}" >
