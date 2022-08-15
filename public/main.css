@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+/* #navbarNav {
+  display: flex;
+  justify-content: center;
+  color: white;
+  overflow-x: hidden;
+} */
+#landing {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(./assets/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Seymour One", sans-serif;
+}
+.Landing {
+  color: #7b886f;
+  display: flex;
+  justify-content: center;
+}
+h3 {
+  font-family: "Russo One", sans-serif;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#carticon {
+  padding: 1rem;
+}
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand {
+  color: #e9ecef;
+}
+.nav-link {
+  color: #e9ecef;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #e9ecef;
+}
+
+/* .menu-container .navbar {
+  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-container:focus-within .navbar {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hamburgermenu {
+  display: flex;
+  justify-content: end;
+} */
+#about {
+  background-image: url(./assets/plain1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#contact {
+  min-height: 100vh;
+}
+/* PRODUCT DESCRIPTION STYLES */
+#productdesc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#productname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#product {
+  /* min-height: 120vh; */
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(./assets/background8.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+#logoimg {
+  width: 44rem;
+  height: 28rem;
+  margin-top: 5rem;
+  box-shadow: 10px 10px 5px black;
+}
+#logosymbol {
+  width: 20rem;
+  height: 15rem;
+  margin-top: 2rem;
+  /* padding: 2rem; */
+  box-shadow: 10px 10px 5px black;
+}
+#aboutpg,
+#about-heading3 {
+  display: flex;
+  justify-content: center;
+}
+#about-heading1 {
+  font-family: "Seymour One", sans-serif;
+  color: #5f7367;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  border-width: 2rem;
+}
+#contact-heading1 {
+  font-family: "Seymour One", sans-serif;
+
+  color: #5f7367;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  border-width: 2rem;
+}
+#products-heading1 {
+  font-family: "Seymour One", sans-serif;
+  color: black;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  border-width: 2rem;
+}
+.border-3 {
+  --bs-border-width: 3px;
+  border-top-style: ridge;
+}
+#card {
+  width: 40rem;
+  height: 45rem;
+  background-color: black;
+  color: #e9ecef;
+}
+#cardimg {
+  width: 40rem;
+  height: 20rem;
+  padding: 2rem;
+}
+#aboutcol1 {
+  font-size: 1rem;
+  color: white;
+  font-family: "Seymour One", sans-serif;
+  padding: 4rem;
+  margin-top: 1rem;
+}
+#aboutcol-2 {
+  font-size: 3rem;
+}
+#aboutcol2 {
+  font-size: 1rem;
+  color: white;
+  font-family: "Seymour One", sans-serif;
+  padding: 4rem;
+  margin-top: 2.5rem;
+}
+h1#landing-heading1 {
+  font-size: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  #logoimg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
