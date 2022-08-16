@@ -29,11 +29,12 @@ body {
   /* color: white; */
 }
 #register-head1 {
-  color: darkgrey;
-  font-family: "Seymour One", sans-serif;
-  text-shadow: 3px 3px 6px black;
+  color: black;
+  /* font-family: "Seymour One", sans-serif; */
+  text-shadow: 3px 3px 6px darkgrey;
   display: flex;
   justify-content: center;
+  font-size: 2rem;
 }
 .testbox {
   height: 85vh;
@@ -85,11 +86,11 @@ h3 {
   justify-content: center;
 }
 
-.navbar-brand {
+a.navbar-brand {
   color: #e9ecef;
 }
-.nav-link {
-  color: #e9ecef;
+a.nav-link {
+  color: white;
 }
 .navbar-nav .nav-link.active,
 .navbar-nav .show > .nav-link {

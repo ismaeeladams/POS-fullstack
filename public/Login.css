@@ -3,7 +3,30 @@
   margin: 0%;
   box-sizing: border-box;
 }
-
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url(https://i.postimg.cc/mg6pmJrt/plain2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a.navbar-brand {
+  color: #e9ecef;
+}
+a.nav-link {
+  color: white;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #e9ecef;
+}
 /* .login {
   border: solid 1px;
 } */
@@ -22,7 +45,7 @@
 }
 
 .login-header {
-  background: #28d;
+  background: black;
   padding: 20px;
   font-size: 1.4em;
   font-weight: normal;
@@ -34,6 +57,7 @@
 .login-container {
   background: #ebebeb;
   padding: 12px;
+  box-shadow: 5px 5px 8px black;
 }
 
 /* Every row inside .login-container is defined with p tags */
@@ -93,14 +117,15 @@
 }
 
 .login button[type="submit"] {
-  background: #28d;
+  background: darkgrey;
   border-color: transparent;
   color: #fff;
   cursor: pointer;
 }
 
 .login button[type="submit"]:hover {
-  background: #17c;
+  background: black;
+  color: white;
 }
 
 /* Buttons' focus effect */
