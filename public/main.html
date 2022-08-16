@@ -60,7 +60,7 @@
             <a class="nav-link" href="./Register.html">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#login">Login</a>
+            <a class="nav-link" href="./Login.html">Login</a>
           </li>
         </ul>
         
@@ -301,7 +301,7 @@
           <div class="row">
         <div class="col-6 md-6">
       <div id="productcard" class="card" >
-     <div class="Item"  onclick=showItem(this.id)' id="${product.product_id}" >
+     <div class="Item" id="${product.product_id}" >
     <h1 id="productname">${product.name}</h1>
     <img id="cardimg" src="${product.image}" alt="${product.image}">
     <p id="productdesc">${product.descriptions}</p>
@@ -353,7 +353,7 @@
           <div class="row">
         <div class="col-6 md-6">
       <div id="productcard" class="card" >
-     <div class="Item"  onclick='showItem(this.id)' id="${product.product_id}" >
+     <div class="Item"  id="${product.product_id}" >
     <h1 id="productname">${product.name}</h1>
     <img id="cardimg" src="${product.image}" alt="${product.image}">
     <p id="productdesc">${product.descriptions}</p>
@@ -368,7 +368,7 @@
   <div class="container">
     <div class="row">
         <div id="product-btn" class="col-sm-6">
-            <button class="btn btn-lg" onclick="window.location.replace("https://point-of-salee.herokuapp.com/main.html#products")">
+            <button class="btn btn-lg" onclick="refwesh()">
                 <span class="onclick()">view details</span>
             </button>
         </div>
@@ -387,7 +387,10 @@
     
       })
     })
-      }
+  }
+  let refwesh=()=>{
+window.location.reload()
+  }
 
     </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

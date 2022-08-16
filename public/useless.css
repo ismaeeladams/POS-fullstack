@@ -1,0 +1,6 @@
+iframe{
+    width: 100vw;
+    height: 95vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

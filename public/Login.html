@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./Login.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <!-- <nav
+      id="navbar"
+      class="navbar fixed-top navbar-expand-lg bg-dark text-light"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#landing">
+          <img
+            src="https://i.postimg.cc/NMhBvSyX/electro-logo.jpg"
+            alt=""
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Electro
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Register.html">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Login.html">Login</a>
+          </li>
+        </ul>
+
+        <div id="carticon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </nav> -->
+    <!-- END NAV -->
+    <div class="login">
+      <h2 class="login-header">Log in</h2>
+      <form class="login-container">
+        <p><input type="email" placeholder="Email" id="email" required /></p>
+        <p><input type="password" placeholder="Password" id="password" /></p>
+        <!-- <p><input type="submit" value="Log in" /></p> -->
+        <p>
+          <button
+            type="submit"
+            onclick="sendUserData(), event.preventDefault() "
+          >
+            Log in
+          </button>
+        </p>
+      </form>
+    </div>
+  </body>
+  <script>
+    async function VerifyUser() {
+      const response = await fetch(
+        "https://point-of-salee.herokuapp.com/users/users/verify",
+        {
+          method: "GET",
+          headers: {
+            "Content-type": "application/json",
+            "x-auth-token": JSON.parse(localStorage.token),
+          },
+        }
+      );
+      let data = await response.json();
+      if (data.msg == "Unauthorized Access!") {
+        // alert("login first");
+        console.log(data.msg);
+      } else {
+        console.log(data.user);
+        localStorage.setItem("UserName", JSON.stringify(data.user.full_name));
+        localStorage.setItem("UserID", JSON.stringify(data.user.user_id));
+        localStorage.setItem("UserType", JSON.stringify(data.user.user_type));
+      }
+    }
+    async function sendUserData() {
+      const email = document.querySelector("#email").value;
+      const password = document.querySelector("#password").value;
+      fetch("https://point-of-salee.herokuap.com/users/login", {
+        method: "POST",
+        mode:"no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // mode: "no-cors",
+        body: JSON.stringify({
+          "email": email,
+          "password": password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", JSON.stringify(data.token));
+          VerifyUser();
+        });
+      //   console.log(data);
+    }
+  </script>
+</html>
