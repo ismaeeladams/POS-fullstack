@@ -11,9 +11,173 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./adminusers.css" />
     <title>Admin products</title>
   </head>
   <body>
+    <h1 id="usertable-head1" class="border border-2 p-2">ADMIN USER TABLE</h1>
+    <!-- ADD PRODUCT MODAL -->
+    <!-- BUTTON -->
+    <button
+      id="addproductbtn"
+      type="button"
+      class="btn btn-outline-light mb-3 d-flex justify-content-center"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      ADD USER
+    </button>
+    <!-- END BUTTON -->
+    <!-- MODAL BODY -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a user</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- INPUT 1 -->
+          <div class="modal-body">
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >EMAIL</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 1 -->
+
+            <!-- INPUT 2 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >PASSWORD</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 2 -->
+            <!-- INPUT 3 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >FULL NAME</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 2 -->
+            <!-- INPUT 3 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >BILLING_ADDRESS</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 3 -->
+            <!-- INPUT 4 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >DEFAULT_SHIPPING_ADDRESS</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 4 -->
+            <!-- INPUT 5 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >COUNTRY</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 5 -->
+            <!-- INPUT 6 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >PHONE</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 6 -->
+            <!-- INPUT 7 -->
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >USER TYPE</span
+              >
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+            <!-- END INPUT 7 -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" onclick="addItem()">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END MODAL BODY -->
     <table id="adminusers-table" class="table table-dark table-hover">
       <thead>
         <tr>
@@ -32,6 +196,7 @@
     </table>
 
     <script>
+      // FETCH USERS FUNCTION
       let users = [];
       const uContainer = document.querySelector("#users");
       fetch("https://point-of-salee.herokuapp.com/users")
@@ -61,6 +226,21 @@
        `;
         });
       }
+      //   ADD USER FUNCTION
+      fetch("https://point-of-salee.herokuapp.com/users", {
+        method: "POST",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          let users = [];
+          users = data;
+          users.forEach((user) => {
+            document.querySelector("#users").innerHTML += `
+    <div class="Item"  onclick="addItem(this.id)" id="${user.user_id}" >
+    </div>
+    `;
+          });
+        });
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
