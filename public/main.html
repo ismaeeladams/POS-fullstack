@@ -64,14 +64,38 @@
           </li>
         </ul>
         
-        <div id="carticon">
+     
+      </div>
+      <!--CART MODAL -->
+      <!-- CART BUTTON -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <!-- <div id="carticon"> -->
            
           <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+        <!-- </div> -->
+</button>
+</nav>
+ <!-- END NAV -->
+ <!-- CART MODAL BODY -->
+<div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">YOUR CART</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </nav>
-
-    <!-- END NAV -->
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CART MODAL -->
+   
     <!-- LANDING -->
     <section id="landing">
       <div class="col-6">
@@ -310,7 +334,7 @@
     `;
         });
       }
-    
+    // SINGLE PRODUCT FUNCTION
       function showSingleProduct(id) {
         fetch(`https://point-of-salee.herokuapp.com/products/${id}`, {
           method: "GET",
@@ -369,13 +393,15 @@ window.location.reload()
   }
 
     </script>
-  </body>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
   <script
     src="https://kit.fontawesome.com/bccdf4f91d.js"
     crossorigin="anonymous"
-    
-  >console.log="0"</script>
+  ></script>
+  
+
+ 
+  </body>
+
+
 </html>
