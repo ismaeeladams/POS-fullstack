@@ -296,7 +296,60 @@
       function showproducts(products) {
         uContainer.innerHTML = "";
         products.forEach((product) => {
+          id = product.product_id
           uContainer.innerHTML += `
+      <div class="container">
+          <div class="row">
+        <div class="col-6 md-6">
+      <div id="productcard" class="card" >
+     <div class="Item"  onclick=showItem(this.id)' id="${product.product_id}" >
+    <h1 id="productname">${product.name}</h1>
+    <img id="cardimg" src="${product.image}" alt="${product.image}">
+    <p id="productdesc">${product.descriptions}</p>
+    <div class="row">
+    <div id="row" class="col-6">
+    <p> <i class="fa-solid fa-tag"></i> ${product.price}</p>
+    </div>
+    <div id="" class="col-6">
+    <p><i class="fa-solid fa-weight-scale"></i> ${product.weight}</p>
+ </div>
+ 
+  <div class="container">
+    <div class="row">
+        <div id="product-btn" class="col-sm-6">
+            <button class="btn btn-lg" onclick="showSingleProduct(${product.product_id})">
+                <span  >view details</span>
+            </button>
+        </div>
+        <div id="product-btn" class="col-sm-6">
+            <a href="#" class="btn btn-lg">
+                <span class="onclick()">Add to cart</span>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    `;
+        });
+      }
+    
+      function showSingleProduct(id) {
+        fetch(`https://point-of-salee.herokuapp.com/products/${id}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+          },
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          products = data;
+          console.log(data);
+          uContainer.innerHTML = "";
+        products.forEach((product) => {
+          uContainer.innerHTML =  `
       <div class="container">
           <div class="row">
         <div class="col-6 md-6">
@@ -316,9 +369,9 @@
   <div class="container">
     <div class="row">
         <div id="product-btn" class="col-sm-6">
-            <a href="./singleproduct.html" class="btn btn-lg">
+            <button class="btn btn-lg" onclick="window.location.replace("https://point-of-salee.herokuapp.com/main.html#products")">
                 <span class="onclick()">view details</span>
-            </a>
+            </button>
         </div>
         <div id="product-btn" class="col-sm-6">
             <a href="#" class="btn btn-lg">
@@ -332,8 +385,11 @@
 </div>
 </div>
     `;
-        });
+    
+      })
+    })
       }
+
     </script>
   </body>
 
