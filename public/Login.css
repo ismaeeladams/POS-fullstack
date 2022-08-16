@@ -41,7 +41,7 @@
   padding: 12px;
 }
 
-.login buttton {
+.login button {
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -53,31 +53,57 @@
   font-size: 0.95em;
 }
 
-.login buttton[type="email"],
-.login buttton[type="password"] {
+.login button[type="email"],
+.login button[type="password"] {
   background: #fff;
   border-color: #bbb;
   color: #555;
 }
 
 /* Text fields' focus effect */
-.login buttton[type="email"]:focus,
-.login buttton[type="password"]:focus {
+.login button[type="email"]:focus,
+.login button[type="password"]:focus {
   border-color: #888;
 }
 
-.login buttton[type="submit"] {
+/* the inputs */
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login button[type="submit"] {
   background: #28d;
   border-color: transparent;
   color: #fff;
   cursor: pointer;
 }
 
-.login buttton[type="submit"]:hover {
+.login button[type="submit"]:hover {
   background: #17c;
 }
 
 /* Buttons' focus effect */
-.login buttton[type="submit"]:focus {
+.login button[type="submit"]:focus {
   border-color: #05a;
 }
