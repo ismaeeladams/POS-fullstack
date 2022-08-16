@@ -156,8 +156,21 @@ h3 {
   justify-content: center;
   border-width: 2rem;
 }
+div#contact\.col-6 {
+  display: flex;
+  justify-content: center;
+}
 #contact-card {
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 2rem;
+  width: 20rem;
+  height: 25rem;
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 5px white;
 }
 #contact {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
@@ -166,12 +179,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-#contact-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
+
 #contact-heading1 {
   font-family: "Seymour One", sans-serif;
   text-shadow: 3px 3px 6px black;
@@ -288,3 +296,36 @@ h1#landing-heading1 {
     margin-bottom: 20px;
   }
 }
+/* @media only screen and (max-width: 425px) {
+  h1#landing-heading1 {
+    font-size: 2.5rem;
+    margin-left: 3rem;
+  }
+  span.Landing {
+    margin-left: 4.5rem;
+  }
+  h3#landing-heading3 {
+    margin-top: 27rem;
+    margin-left: -9rem;
+  }
+  h1#about-heading1 {
+    width: 16rem;
+    margin-left: 4rem;
+  }
+  div#aboutcol1 {
+    width: 50rem;
+    height: 30rem;
+    
+    margin-top: 0%;
+  }
+  img#logosymbol {
+    width: 17rem;
+    height: 12rem;
+  }
+  p#aboutpg {
+    width: 17rem;
+    height: 20rem;
+    margin-left: -9rem;
+    margin-top: 18rem;
+  }
+} */
