@@ -6,17 +6,14 @@ app.set("port", process.env.PORT || 8080); // Set the port
 app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
 
-// app.get("/", (req, res) => {
-//   res.json({ msg: "Welcome" });
-// });
+router.get("/", (req, res) => {
+  res.json({ msg: "Welcome" });
+});
+
 const jwt = require("jsonwebtoken");
 // const bcrypt = require("")
 app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: false }));
-
-// app.get("/", function (req, res) {
-//   res.sendFile(__dirnamev + "/" + "index.html");
-// });
 
 const userRoutes = require("./Routes/UserRoute");
 app.use("/users", userRoutes);
@@ -27,6 +24,7 @@ const productsRoutes = require("./Routes/ProductsRoute");
 app.use("/products", productsRoutes);
 
 const orderRoutes = require("./Routes/OrderRoute");
+const router = require("./Routes/UserRoute");
 app.use("/orders", orderRoutes);
 
 // const categoriesRoutes = require("./Routes/categoriesRoute");
@@ -35,4 +33,8 @@ app.use("/orders", orderRoutes);
 app.listen(app.get("port"), () => {
   console.log(`Listening for calls on port ${app.get("port")}`);
   console.log("Press Ctrl+C to exit server");
+});
+
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/" + "index.html");
 });
