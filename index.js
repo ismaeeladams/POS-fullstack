@@ -1,12 +1,12 @@
 const express = require("express"); // Used to set up a server
 const cors = require("cors"); // Used to prevent errors when working locally
-
+require("dotenv").config;
 const app = express(); // Initialize express as an app variable
 app.set("port", process.env.PORT || 8080); // Set the port
 app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ msg: "Welcome" });
 });
 
