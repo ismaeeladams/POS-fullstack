@@ -9,7 +9,7 @@ app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
 var bodyParser = require("body-parser");
 
-const userRoute = require("../Routes/userRoute");
+const userRoute = require("../Routes/UserRoute");
 const productsRoute = require("../Routes/ProductsRoute");
 const orderRoute = require("../Routes/OrderRoute");
 
