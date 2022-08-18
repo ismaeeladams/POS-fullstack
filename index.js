@@ -65,5 +65,5 @@ app.use(express.static("public"));
 // This is where we check URLs and Request methods to create functionality
 // GET '/' is always what will be displayed on the home page of your application
 app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/" + "index.html");
+  res.sendFile(__dirname + "/" + "./index.html");
 });
