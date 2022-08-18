@@ -9,10 +9,9 @@ app.use(express.json()); // Enable the server to handle JSON requests
 app.use(cors()); // Dont let local development give errors
 var bodyParser = require("body-parser");
 
-const userRoute = require("../routes/userRoute");
-const productsRoute = require("../routes/productsRoute");
-const orderRoute = require("../routes/orderRoute");
-const staffRoute = require("../routes/staffRoute");
+const userRoute = require("../Routes/userRoute");
+const productsRoute = require("../Routes/ProductsRoute");
+const orderRoute = require("../Routes/OrderRoute");
 
 app.listen(app.get("port"), () => {
   console.log(`Listening for calls on port ${app.get("port")}`);
