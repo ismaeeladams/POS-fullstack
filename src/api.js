@@ -29,7 +29,6 @@ app.use(`/.netlify/functions/api`, router);
 router.use("/users", userRoute);
 router.use("/products", productsRoute);
 router.use("/orders", orderRoute);
-router.use("/staff", staffRoute);
 
 module.exports = app;
 module.exports.handler = serverless(app);
